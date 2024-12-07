@@ -1,0 +1,33 @@
+<div class="flex justify-content-center  mb-4">
+  <mat-list>
+    <div mat-subheader>Usuarios</div>
+    <mat-list-item *ngFor="let user of users">
+      <style>
+        @media (max-width: 450px) {
+          .responsive-flex {
+            flex-direction: column !important;
+          }
+        }
+      </style>
+      <div class="flex flex-row justify-content-between responsive-flex">
+
+        <div>
+      <div matListItemTitle>{{user.nombre}}</div>
+      <div matListItemLine>{{user.usuario}}</div>
+      <div matListItemLine>{{user.correo}}</div>
+      </div>
+      <div>
+        <button mat-flat-button class="mt-2 ml-3" color="warn" (click)="onDeleteHero(user.correo)">
+
+
+          Borrar
+        </button>
+
+        </div>
+</div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+  </mat-list>
+  </div>
+

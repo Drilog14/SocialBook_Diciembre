@@ -1,0 +1,9 @@
+
+.book {
+  box-shadow: 10px 10px 16px rgba(0,0,0,0.5); /* Horizontal offset, vertical offset, blur radius, color */
+  transition: box-shadow 0.3s ease-in-out; /* Opcional: efecto de transición suave */
+}
+
+.book:hover {
+  box-shadow: 12px 12px 18px rgba(0,0,0,0.6); /* Sombra más pronunciada al pasar el cursor */
+}

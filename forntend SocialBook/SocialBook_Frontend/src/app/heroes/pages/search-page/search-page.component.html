@@ -1,0 +1,34 @@
+
+<div class="flex flex-column p-2">
+
+<h2>Buscador</h2>
+
+<mat-form-field>
+<mat-label>Buscador de héroes</mat-label>
+<input
+type="text"
+matInput
+[formControl]="searchInput"
+(input)="searchLibro()"
+[matAutocomplete]="auto"
+/>
+
+<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+(optionSelected)="onSelectedOption($event)">
+  <mat-option *ngFor="let libro of libros"  [value]="libro" [routerLink]="['/heroes/book', libro.id]">
+    {{libro.titulo}}
+  </mat-option>
+
+  <mat-option
+  *ngIf="libros.length === 0 && searchInput.value && searchInput.value.length > 0"
+  value="">
+    No se encontró nada con el término {{searchInput.value}}
+  </mat-option>
+</mat-autocomplete>
+
+</mat-form-field>
+
+
+
+
+</div>

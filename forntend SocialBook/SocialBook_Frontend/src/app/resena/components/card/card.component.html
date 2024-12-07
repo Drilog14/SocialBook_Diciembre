@@ -1,0 +1,60 @@
+  <!-- <mat-card [routerLink]="['/resenas', resena._id]" class="book sm:col-6 flex flex-row" style="">
+
+  <img mat-card-image
+  [src]=" resena | ResenasImage"
+  [alt]="resena.titulo" style="width: auto; height: 150px; margin: -8px; border-radius: 5px;">
+
+
+  <mat-card-content class="">
+
+
+
+  </mat-card-content>
+
+  <mat-card-content class="">
+    <mat-card-title><span class="" style="font-size: 14px;">Valoración:{{resena.votos}}</span></mat-card-title>
+  </mat-card-content>
+
+
+  <button mat-button mat-raised
+  color="primary"
+  [routerLink]="['/resenas/edit', resena._id]">
+    <mat-icon>edit</mat-icon>
+    Editar
+  </button>
+
+  <span class="spacer"></span>
+
+
+  </mat-card> -->
+  <mat-card color="primary" class="card-tamano primary" [routerLink]="['/resenas', resena.id]">
+    <mat-card-header class="flex flex-row">
+
+      <div class="" >
+        <img mat-card-image
+  [src]=" resena | ResenasImage"
+  [alt]="resena.titulo" style="width: auto; height: 150px; margin: -8px; border-radius: 5px;">
+
+
+    </div>
+
+<mat-card-content class="flex-column justify-content-end">
+        <mat-card-title>{{resena.titulo}}</mat-card-title>
+        <mat-card-subtitle>Usuario: {{resena.autor}}</mat-card-subtitle>
+        <button mat-button mat-raised
+color="primary"
+[routerLink]="['/resenas/edit', resena.id]">
+  <mat-icon>edit</mat-icon>
+  Editar
+</button>
+</mat-card-content>
+
+<!-- <button mat-button mat-raised
+color="primary"
+[routerLink]="['/resenas/edit', resena._id]">
+  <mat-icon>edit</mat-icon>
+  Editar
+</button> -->
+    </mat-card-header>
+
+  </mat-card>

@@ -1,0 +1,77 @@
+<div>
+  <h1>Listado de Héroes</h1>
+  <mat-divider></mat-divider>
+  <style>
+    @media (max-width: 701px) {
+      .fase2 {
+        flex-direction: column !important;
+      }
+    }
+
+    @media (max-width: 501px) {
+      .ok {
+        flex-direction: column !important;
+      }
+    }
+  </style>
+  <div class="flex fase2">
+    <div class="col-6 sm:col-6
+  md:col-6
+  lg:col-6
+  xl:col-6 ">
+      <app-search-page></app-search-page>
+    </div>
+    <div class="col-12 sm:col-9
+md:col-6
+lg:col-6 ">
+      <h2>Filtrar</h2>
+      <div class="flex flex-row ok">
+        <div class="mr-1">
+          <mat-card-header>Numero de votos: </mat-card-header>
+          <mat-slider min="0" max="5000" step="100" value="1000" showTickMarks discrete [displayWith]="formatLabel">
+            <input matSliderThumb [(ngModel)]="minRating">
+          </mat-slider>
+        </div>
+
+        <div>
+
+
+          <mat-card-header>Género:</mat-card-header>
+          <mat-select class="mt-2 ml-3"  [(ngModel)]="selectedGenre">
+            <mat-option value="">Ninguno</mat-option>
+            <mat-option *ngFor="let genre of genres" [value]="genre">{{ genre }}</mat-option>
+
+          </mat-select>
+        </div>
+<mat-divider></mat-divider>
+        <div>
+
+
+          <mat-card-header>Autor:</mat-card-header>
+          <mat-select class="mt-2 ml-3"  [(ngModel)]="selectedAuthor">
+            <mat-option value="">Ninguno</mat-option>
+            <mat-option *ngFor="let autor  of authors" [value]="autor">{{ autor }}</mat-option>
+
+          </mat-select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+
+
+
+
+  <div class="grid bm-8 pt-1">
+    <div *ngFor="let hero of heroes | filterByRating:minRating:selectedGenre:selectedAuthor"
+      class="col-12 sm:col-4 md:col-3 xl:col-2 m-3" style="width: 150px; height: auto;">
+      <heroes-hero-card [hero]="hero"></heroes-hero-card>
+
+
+    </div>
+
+
+
+
+  </div>
+</div>

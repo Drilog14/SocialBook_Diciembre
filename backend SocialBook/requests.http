@@ -1,0 +1,108 @@
+###
+POST http://localhost:9000/api/users 
+Content-Type: application/json
+
+{
+    "Usuario": "Luigi",
+   
+    "nombre": "Luige",
+     "contrasena": "1233",
+    "imagen": "1234",
+    "correo": "1234",
+    "librosFavoritos": [],
+    "resenasFavoritas":[],
+      "librosPendientes": [],
+        "librosLeidos":[] 
+ 
+}
+
+
+###
+GET http://localhost:9000/api/users 
+
+###
+GET http://localhost:9000/libros/buscar?query=e
+
+###
+PUT http://localhost:9000/api/users/6650cd9e758ea08503452eca
+Content-Type: application/json
+
+{
+
+    "Usuario": "Maria",
+   
+    "nombre": "Luige",
+    "contraseña": "12345"
+ 
+}
+
+###
+DELETE http://localhost:9000/api/users/6650cd9e758ea08503452eca
+
+// libros
+
+###
+POST http://localhost:9000/api/libros
+Content-Type: application/json
+
+{
+    "titulo": "Cuentos de navidad",
+   
+    "autor": "Charles Dickens",
+    "imagen": "navidad",
+    "resumen": "A Christmas Carol está ambientado en la City de Londres durante un día «frío, desapacible, cortante y con niebla» de Nochebuena. Está estructurado en cinco capítulos denominados «estrofas», de los cuales tres hacen referencia a los encuentros de los «fantasmas de la Navidad» —pasado, presente y futuro— con Ebenezer Scrooge, un anciano avaro y egoísta que desprecia todo lo relacionado con la Navidad.",
+    "etiquetas": "Fantasmas, Navidad, Nochebuena, Londres",
+    "genero": "Fantasmas, Navidad, Nochebuena, Londres",
+    "editorial": "Editorial Casa de la Literatura",
+    "fecha": "2018-01-01",
+    "paginas": 1000,
+    "valoracion" : 1500
+
+}
+
+// reseñas
+
+###
+POST http://localhost:9000/api/resenas
+Content-Type: application/json
+
+{
+
+  "Titulo": "Cuentos de navidad",
+  "Usuario": "Charles Dickens",
+  "opinion": "navidad",
+  "opinion": 2000,
+  "imagen": "usuario1",
+ 
+}
+
+// reseñas
+
+###
+POST http://localhost:9000/api/resena
+Content-Type: application/json
+
+{
+    "Titulo": "Frankensteins Modernos",
+   
+    "Usuario": "Carlitos",
+    "opinion": "aaaaaaaaaaaaaaaa",
+    "votos": 5
+ 
+}
+
+// reseñas
+
+###
+POST http://localhost:9000/api/listas
+Content-Type: application/json
+
+{
+    "titulo": "lISTAS",
+   
+    "librosPreferidos": "NARANJA",
+    "resenasPreferidas": "MERCADO"
+    
+ 
+}
+

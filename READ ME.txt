@@ -1,0 +1,20 @@
+Backend: 
+
+
+Para iniciar el servidor del backend se usara el comando :
+
+
+(por si acaso :
+1.npm install --save-dev nodemon
+2. npm install express
+)
+-npm run start
+
+
+
+Frontend: 
+
+
+Para iniciar el servidor:
+
+-ng serve

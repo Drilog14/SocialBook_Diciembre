@@ -1,0 +1,88 @@
+<h1>
+  {{currentResena.id ? 'Editar' : 'Agregar'}} Reseñas
+  <small *ngIf="currentResena.id" > {{currentResena.titulo}}</small>
+  </h1>
+
+  <mat-divider class="mb-2"></mat-divider>
+
+  <div class="grid">
+
+    <div class="col-12 sm:col-6">
+
+      <mat-card>
+        <mat-card-content>
+          <form class="grid" [formGroup]="resenaForm" (ngSubmit)="onSubmit()">
+
+
+            <mat-form-field class="col-12">
+              <mat-label>Titulo</mat-label>
+              <input matInput type="text" required formControlName="titulo" />
+            </mat-form-field>
+
+
+
+
+
+            <mat-form-field class="col-12">
+              <mat-label>opinion</mat-label>
+              <input matInput type="text" required formControlName="opinion"/>
+            </mat-form-field>
+
+
+
+            <mat-form-field class="col-12">
+              <mat-label>Libro</mat-label>
+              <input matInput type="text" required formControlName="libro_titulo"/>
+            </mat-form-field>
+
+            <mat-form-field class="col-12">
+              <mat-label>Fecha</mat-label>
+              <input matInput type="text" required formControlName="fecha"/>
+            </mat-form-field>
+
+            <mat-form-field class="col-12">
+              <mat-label>Valoración</mat-label>
+              <input matInput type="text" required formControlName="votos"/>
+            </mat-form-field>
+
+
+
+
+
+            <mat-form-field class="col-12">
+              <mat-label>Portada del libro</mat-label>
+              <mat-select formControlName="imagen">
+                <mat-option *ngFor="let publisher of publishers"
+                [value]="publisher.id">
+                   {{ publisher.desc}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+  <div class="flex justify-content-between">
+
+       <button mat-flat-button color="warn" (click)="onDeleteHero()">
+            Borrar
+          </button>
+          <span></span>
+
+    <button
+    mat-flat-button color="primary" (click)="onSubmit()">
+    <mat-icon>save</mat-icon>Guardar</button>
+  </div>
+
+
+
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+  <div class="col-12 sm:col-6 flex justify-content-center">
+    <mat-card>
+      <img [src]="currentResena | ResenasImage" style="width: 450px;" alt="Portada del libro"  mat-card-image/>
+    </mat-card>
+  </div>
+
+
+
+  </div>

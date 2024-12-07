@@ -1,0 +1,30 @@
+<mat-card [routerLink]="['/heroes/book', hero.id]" class="book sm:col-6" style="width: 150px; height: auto;">
+
+<img mat-card-image
+[src]=" hero | librosImage"
+[alt]="hero.titulo" style="width: 150px; height: 208px; margin: -8px; border-radius: 5px;">
+
+
+<mat-card-content class="p-0 sm:col-6">
+
+    <span class="spacer"></span>
+
+</mat-card-content>
+<mat-divider></mat-divider>
+<mat-card-content class="p-0">
+  <mat-card-title><span class="ml-2" style="font-size: 14px;">Valoración:{{hero.valoracion}}</span></mat-card-title>
+</mat-card-content>
+
+
+<button mat-button mat-raised
+color="primary"
+[routerLink]="['/heroes/edit', hero.id]">
+  <mat-icon>edit</mat-icon>
+  Editar
+</button>
+
+<span class="spacer"></span>
+
+
+
+</mat-card>

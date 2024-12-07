@@ -1,0 +1,60 @@
+<ng-template #divLoading>
+
+  <mat-grid-list cols="1">
+  <mat-grid-tile>
+  <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+
+  </mat-grid-list>
+
+
+  </ng-template>
+  <div >
+
+  </div>
+  <div *ngIf="resena else divLoading" class="grid justify-content-center p-1 mt-2">
+  <!-- primer card -->
+  <mat-card class="col-11 ml-1 lg:col-8 md:col-4 sm:col-9">
+  <mat-card-header class="ml-3">
+    <mat-card-title> {{resena.titulo}}</mat-card-title>
+  </mat-card-header>
+  <div class="flex flex-row ml-3">
+  <div>
+  <img [src]="resena | ResenasImage" class="book ml-3" style="width: 200px; border-radius: 5px;" alt="error" mat-card-image/>
+  </div>
+<div>
+  <mat-card-content>
+    <mat-list-item><strong>Usuario: </strong>{{resena.usuario}}</mat-list-item>
+    <mat-list-item><strong>Titulo: </strong>{{resena.titulo}}</mat-list-item>
+    <mat-list-item><strong>Libro: </strong>{{resena.libro_titulo}}</mat-list-item>
+    <mat-list-item><strong>Valoración: </strong>{{resena.votos}}</mat-list-item>
+
+
+
+  </mat-card-content>
+</div>
+</div>
+
+  <!-- segundo card -->
+
+
+
+  <mat-card-content class="mt-3">
+
+
+    <mat-card-header  >
+      <mat-card-title>Reseña:</mat-card-title>
+      <mat-card-subtitle>{{ resena.opinion}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <button mat-button class="mt-2 ml-2" color="warn" (click)="goBack()">
+  Regresar
+    </button>
+  </mat-card-content>
+
+    </mat-card>
+  <!-- tercer card -->
+
+
+
+  </div>

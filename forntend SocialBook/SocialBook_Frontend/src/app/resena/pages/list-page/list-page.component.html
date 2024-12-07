@@ -1,0 +1,12 @@
+
+<h1>Listado de Reseñados</h1>
+<mat-divider></mat-divider>
+
+
+<div class="grid bm-8 pt-1 mb-4">
+<div *ngFor="let hero of resenas" class="col-12 sm:col-4 md:col-3 xl:col-2 ml-3" style="width: 450px; height: auto;">
+  <resena-hero-card [resena]="hero"></resena-hero-card>
+
+  </div>
+
+</div>

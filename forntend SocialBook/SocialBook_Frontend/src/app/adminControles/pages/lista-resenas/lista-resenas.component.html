@@ -1,0 +1,33 @@
+<div class="flex justify-content-center  mb-4">
+  <mat-list>
+    <div mat-subheader>Libros</div>
+    <mat-list-item *ngFor="let libro of libros" style="height: 130px">
+      <mat-icon matListItemIcon>libro</mat-icon>
+      <style>
+        @media (max-width: 810px) {
+          .fase2 {
+            flex-direction: column !important;
+          }
+        }
+      </style>
+      <div class="flex flex-row justify-content-between fase2">
+        <div class="flex flex-row"><div>
+        <img [src]="libro | ResenasImage" style="width: 100px;" alt="Portada del libro" class="mr-1" mat-card-image/>
+      </div><div >
+      <div matListItemTitle>{{libro.titulo}}</div>
+      <div matListItemLine>Libro: {{libro.libro_titulo}}</div>
+    </div></div>
+      <div>
+      <button mat-flat-button class="mt-2 ml-3" color="warn" (click)="onDeleteHero(libro.titulo)">
+
+
+        Borrar
+      </button>
+
+      </div>
+</div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+  </mat-list>
+  </div>
